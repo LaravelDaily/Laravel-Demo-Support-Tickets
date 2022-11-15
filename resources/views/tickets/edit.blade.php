@@ -66,7 +66,7 @@
             </div>
 
             <div class="mt-4">
-                <x-input-label for="status" :value="__('Priority')" />
+                <x-input-label for="status" :value="__('Status')" />
                 <select name="status" id="status" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus-within:text-primary-600 focus:border-primary-300 focus:ring-primary-200 focus:ring focus:ring-opacity-50">
                     @foreach(\Coderflex\LaravelTicket\Enums\Status::cases() as $status)
                         <option value="{{ $status->value }}" @selected(old('status', $ticket->status) == $status->value)>{{ $status->name }}</option>
