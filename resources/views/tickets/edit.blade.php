@@ -35,7 +35,7 @@
                         <div class="mt-1 inline-flex space-x-1">
                             <input class="text-purple-600 form-checkbox focus:shadow-outline-purple focus:border-purple-400 focus:outline-none"
                                    type="checkbox" name="labels[]" id="label-{{ $id }}" value="{{ $id }}"
-                                    @checked(in_array($id, old('labels', [])) || $ticket->labels->contains($id))>
+                                    @checked(old('labels') ? in_array($id, old('labels', [])) : $ticket->labels->contains($id))>
                             <x-input-label for="label-{{ $id }}">{{ $name }}</x-input-label>
                         </div>
                     @endforeach
@@ -48,7 +48,7 @@
                         <div class="mt-1 inline-flex space-x-1">
                             <input class="text-purple-600 form-checkbox focus:shadow-outline-purple focus:border-purple-400 focus:outline-none"
                                    type="checkbox" name="categories[]" id="category-{{ $id }}" value="{{ $id }}"
-                                    @checked(in_array($id, old('categories', [])) || $ticket->categories->contains($id))>
+                                    @checked(old('categories') ? in_array($id, old('categories', [])) : $ticket->categories->contains($id))>
                             <x-input-label for="category-{{ $id }}">{{ $name }}</x-input-label>
                         </div>
                     @endforeach
