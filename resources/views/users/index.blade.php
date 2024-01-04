@@ -39,7 +39,7 @@
                                         {{ __('Edit') }}
                                     </a>
 
-                                    <form action="{{ route('tickets.destroy', $user) }}" method="POST" onsubmit="return confirm('Are you sure?')" style="display: inline-block;">
+                                    <form action="{{ route('users.destroy', $user) }}" method="POST" onsubmit="return confirm('Are you sure?')" style="display: inline-block;">
                                         @csrf
                                         @method('DELETE')
                                         <x-primary-button>
